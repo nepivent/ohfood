@@ -1,0 +1,64 @@
+@mixin responsive($breakpoint) {
+	@if $breakpoint == phone {
+		@media only screen and (min-width: 375px) {
+			@content
+		}
+	}
+
+	@if $breakpoint == phone1 {
+		@media only screen and (min-width: 425px) {
+			@content
+		}
+	}
+
+	@if $breakpoint == tab-port {
+		@media only screen and (min-width: 768px) {
+			@content
+		}
+	}
+
+	@if $breakpoint == tab-land {
+		@media only screen and (min-width: 1024px) {
+			@content
+		}
+	}
+
+	@if $breakpoint == desktop-big {
+		@media only screen and (min-width: 1440px) {
+			@content
+		}
+	}
+
+	@if $breakpoint == desktop-big-plus {
+		@media screen and (min-width: 2560px) {
+			@content
+		}
+	}
+}
+
+body {
+	@include responsive (phone) {
+		margin: 0 auto;
+	}
+
+	@include responsive (phone1) {
+		
+	}
+
+	@include responsive (tab-port) {
+	}
+
+	@include responsive (tab-land) {
+	}
+
+	@include responsive (desktop-big) {
+	}
+
+	@include responsive (desktop-big) {
+	}
+}
+.wrapper {
+	@include responsive (desktop-big) {
+		font-size:2em;
+	}
+}
